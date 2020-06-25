@@ -75,6 +75,8 @@ const ContactForm = ({ primary }) => {
             width: 100%;
             flex: 0 0 100%;
             padding: 70px 100px;
+            position: relative;
+            overflow: hidden;
             @media (min-width: 992px) {
               width: 50%;
               flex: 0 0 50%;
