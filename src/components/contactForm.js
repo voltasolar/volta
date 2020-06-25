@@ -241,7 +241,7 @@ const ContactForm = ({ primary }) => {
               name="attachment"
               onChange={handleFileUpload}
             />
-            <label htmlFor="file">
+            <label htmlFor="receipt">
               <span>Sube tu recibo de luz (opcional)</span>
             </label>
             <Button type="submit" disabled={serverState.submitting}>
