@@ -13,7 +13,6 @@ import HighlightBanner from "../components/highlightBanner"
 
 const HomePage = () => {
   const slices = useSlices()
-  console.log(slices)
   return (
     <Layout>
       {slices.map((slice, index) => {

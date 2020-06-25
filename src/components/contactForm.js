@@ -15,46 +15,21 @@ const ring = keyframes`
 `
 
 const ContactForm = ({ primary }) => {
-  const [inputs, setInputs] = useState({
-    name: "",
-    email: "",
-    averagePayment: "",
-    receipt: "",
-  })
-
   const [serverState, setServerState] = useState({
     submitting: false,
     status: null,
   })
-
-  // const handleInputChange = e => {
-  //   e.persist()
-  //   setInputs(prev => ({
-  //     ...prev,
-  //     [e.target.id]: e.target.value,
-  //   }))
-  //   console.log(inputs)
-  // }
 
   const handleFileUpload = e => {
     const label = e.currentTarget.nextElementSibling
     const fileName = e.target.value.split("\\").pop()
     if (fileName) {
       label.querySelector("span").innerHTML = fileName
-      //handleInputChange(e)
     }
   }
 
   const handleServerResponse = (ok, msg) => {
     setServerState({ submitting: false, status: { ok, msg } })
-    if (ok) {
-      setInputs({
-        name: "",
-        email: "",
-        averagePayment: "",
-        receipt: "",
-      })
-    }
   }
 
   const handleFormSubmit = e => {
@@ -84,6 +59,17 @@ const ContactForm = ({ primary }) => {
         css={css`
           display: flex;
           flex-wrap: wrap;
+          .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+          }
           .form-wrapper {
             background-color: #000;
             width: 100%;
@@ -212,8 +198,11 @@ const ContactForm = ({ primary }) => {
             onSubmit={handleFormSubmit}
             data-netlify="true"
             name="Contacto"
-            method="POST"
+            method="post"
           >
+            <label htmlFor="name" className="sr-only">
+              Nombre
+            </label>
             <input
               id="name"
               type="text"
@@ -221,6 +210,9 @@ const ContactForm = ({ primary }) => {
               name="Nombre"
               required
             />
+            <label htmlFor="email" className="sr-only">
+              Email
+            </label>
             <input
               id="email"
               type="email"
@@ -228,6 +220,9 @@ const ContactForm = ({ primary }) => {
               name="_replyto"
               required
             />
+            <label htmlFor="averagePayment" className="sr-only">
+              Pago promedio a la CFE
+            </label>
             <input
               id="averagePayment"
               type="number"
@@ -244,7 +239,11 @@ const ContactForm = ({ primary }) => {
             <label htmlFor="receipt">
               <span>Sube tu recibo de luz (opcional)</span>
             </label>
-            <Button type="submit" disabled={serverState.submitting}>
+            <Button
+              type="submit"
+              disabled={serverState.submitting}
+              aria-label="button"
+            >
               Enviar
             </Button>
             {serverState.submitting && (
