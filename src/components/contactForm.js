@@ -43,12 +43,14 @@ const ContactForm = ({ primary }) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     })
       .then(res => {
+        console.log(res)
         handleServerResponse(
           true,
           "Recibios tu mensaje, nos pondremos en contacto en breve."
         )
       })
       .catch(e => {
+        console.log(e)
         handleServerResponse(false, "Ocurrió un error. Intenta de nuevo")
       })
   }
