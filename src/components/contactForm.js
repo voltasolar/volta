@@ -204,6 +204,7 @@ const ContactForm = ({ primary }) => {
             name="Contacto"
             method="post"
           >
+            <input type="hidden" name="form-name" value="Contacto" />
             <label htmlFor="name" className="sr-only">
               Nombre
             </label>
