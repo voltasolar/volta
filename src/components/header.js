@@ -247,14 +247,52 @@ const Header = () => {
             button {
               background: transparent;
               border: none;
+              margin-bottom: 1rem;
+              font-size: 1.5rem;
+            }
+          }
+          .hamburger {
+            background: transparent;
+            border: none;
+            width: 30px;
+            height: 20px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            span {
+              width: 100%;
+              height: 2px;
+              background: #000;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              &:nth-of-type(1) {
+                transform: rotate(45deg);
+              }
+              &:nth-of-type(2) {
+                transform: rotate(-45deg);
+              }
             }
           }
         `}
       >
+        <button onClick={toggleMenu} className="hamburger">
+          <span></span>
+          <span></span>
+        </button>
         <ul>
           {menu.map(({ text, url }, index) => (
             <li key={`menu-item-${index}`}>
-              <button onClick={() => scrollTo(url)}>{text}</button>
+              <button
+                onClick={() => {
+                  setActive(false)
+                  scrollTo(url)
+                }}
+              >
+                {text}
+              </button>
             </li>
           ))}
         </ul>
