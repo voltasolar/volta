@@ -27,21 +27,21 @@ const ContactForm = ({ primary }) => {
     status: null,
   })
 
-  const handleInputChange = e => {
-    e.persist()
-    setInputs(prev => ({
-      ...prev,
-      [e.target.id]: e.target.value,
-    }))
-    console.log(inputs)
-  }
+  // const handleInputChange = e => {
+  //   e.persist()
+  //   setInputs(prev => ({
+  //     ...prev,
+  //     [e.target.id]: e.target.value,
+  //   }))
+  //   console.log(inputs)
+  // }
 
   const handleFileUpload = e => {
     const label = e.currentTarget.nextElementSibling
     const fileName = e.target.value.split("\\").pop()
     if (fileName) {
       label.querySelector("span").innerHTML = fileName
-      handleInputChange(e)
+      //handleInputChange(e)
     }
   }
 
@@ -219,7 +219,6 @@ const ContactForm = ({ primary }) => {
               type="text"
               placeholder="Nombre*"
               name="Nombre"
-              onChange={handleInputChange}
               value={inputs.name}
               required
             />
@@ -228,7 +227,6 @@ const ContactForm = ({ primary }) => {
               type="email"
               placeholder="Correo*"
               name="_replyto"
-              onChange={handleInputChange}
               value={inputs.email}
               required
             />
@@ -238,7 +236,6 @@ const ContactForm = ({ primary }) => {
               placeholder="Pago promedio bimestral a CFE*"
               min="0"
               name="Pago promedio bimestral a CFE"
-              onChange={handleInputChange}
               value={inputs.averagePayment}
             />
             <input
