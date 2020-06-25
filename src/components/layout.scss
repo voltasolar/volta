@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("../fonts/hkgrotesk-mediumlegacy-webfont.woff2") format("woff2"),
+    url("../fonts/hkgrotesk-mediumlegacy-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("../fonts/hkgrotesk-boldlegacy-webfont.woff2") format("woff2"),
+    url("../fonts/hkgrotesk-boldlegacy-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "HK Grotesk";
+}
+
+button {
+  cursor: pointer;
+  &,
+  &:active {
+    outline: none;
+  }
+}
+
+input,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -6,6 +6,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,6 +28,15 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-prismic-graphql`,
+      options: {
+        repositoryName: `volta`,
+        accessToken: `MC5YdWZKUHhJQUFDUUFmQ3FC.Qe-_vXvvv73vv70RGO-_ve-_ve-_vUBw77-9Iu-_vXrvv70oDO-_vXIz77-9IGsjJu-_ve-_vTfvv70O`,
+        path: `/preview`,
+        preview: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
