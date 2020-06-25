@@ -38,7 +38,7 @@ const ContactForm = ({ primary }) => {
     axios({
       method: "post",
       //url: "https://formspree.io/xzbjvwbp",
-      url: e.target.action,
+      url: "/",
       data: new FormData(e.target),
       headers: { "Content-Type": "multipart/form-data" },
     })
