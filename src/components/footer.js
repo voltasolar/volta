@@ -26,12 +26,23 @@ const Footer = () => {
             flex-wrap: wrap;
             align-items: center;
             img {
-              margin-right: auto;
+              margin: auto;
+              margin-bottom: 3rem;
+              @media (min-width: 992px) {
+                margin-left: 0;
+                margin-bottom: 0;
+              }
             }
           }
           .footer-contact {
-            max-width: 30%;
-            flex: 0 0 30%;
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-bottom: 2rem;
+            @media (min-width: 992px) {
+              max-width: 30%;
+              flex: 0 0 30%;
+              margin-bottom: 0;
+            }
             a {
               display: block;
               margin-top: 1rem;

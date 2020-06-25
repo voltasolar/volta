@@ -19,9 +19,17 @@ const TextWithTitle = ({ content }) => {
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            @media (min-width: 768px) {
+              margin-bottom: 0;
+            }
           }
           p {
             line-height: 2;
+            text-align: center;
+            @media (min-width: 768px) {
+              text-align: left;
+            }
           }
         `}
       >

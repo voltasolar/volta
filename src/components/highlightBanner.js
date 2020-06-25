@@ -23,14 +23,18 @@ const HightlightBanner = ({ primary }) => {
             margin-bottom: 3rem;
           }
           p {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-            width: 28%;
             display: flex;
             align-items: center;
+            text-align: center;
+            @media (min-width: 992px) {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto;
+              width: 28%;
+              text-align: left;
+            }
           }
           .image-wrapper {
             width: 80%;
@@ -38,7 +42,7 @@ const HightlightBanner = ({ primary }) => {
             margin: auto;
             position: relative;
             &__phone {
-              width: 43%;
+              width: 60%;
               margin: auto;
               position: absolute;
               top: 0;
@@ -46,18 +50,28 @@ const HightlightBanner = ({ primary }) => {
               left: 0;
               right: 0;
               margin: auto;
+              @media (min-width: 992px) {
+                width: 43%;
+              }
             }
             &__deco {
               margin: auto;
               display: block;
-              width: 60%;
+              width: 85%;
               height: auto;
+              @media (min-width: 992px) {
+                width: 60%;
+              }
             }
             &__deco2 {
               position: absolute;
               left: 0;
               bottom: 20%;
               width: 36%;
+              display: none;
+              @media (min-width: 992px) {
+                display: block;
+              }
             }
           }
         `}

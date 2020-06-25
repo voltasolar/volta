@@ -76,12 +76,13 @@ const ContactForm = ({ primary }) => {
             background-color: #000;
             width: 100%;
             flex: 0 0 100%;
-            padding: 70px 100px;
+            padding: 70px 15px;
             position: relative;
             overflow: hidden;
             @media (min-width: 992px) {
               width: 50%;
               flex: 0 0 50%;
+              padding: 70px 100px;
             }
             input,
             textarea,
@@ -126,11 +127,12 @@ const ContactForm = ({ primary }) => {
             background-color: ${colors.yellow};
             width: 100%;
             flex: 0 0 100%;
-            padding: 100px 70px;
+            padding: 100px 15px;
             text-align: center;
             @media (min-width: 992px) {
               width: 50%;
               flex: 0 0 50%;
+              padding: 100px 70px;
             }
             h2 {
               text-transform: uppercase;

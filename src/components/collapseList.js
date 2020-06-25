@@ -25,7 +25,11 @@ const CollapseList = ({ primary, fields }) => {
         className="container"
         css={css`
           position: relative;
-          margin-top: -20px;
+          padding-top: 80px;
+          @media (min-width: 992px) {
+            margin-top: -20px;
+            padding-top: 0;
+          }
           .row {
             align-items: center;
           }
@@ -35,29 +39,37 @@ const CollapseList = ({ primary, fields }) => {
             letter-spacing: 0.2em;
             font-size: 1.2rem;
             margin-bottom: 4rem;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100px;
-            margin: auto;
+            @media (min-width: 992px) {
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 100px;
+              margin: auto;
+            }
           }
           .list {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
             padding-top: 80px;
+            order: 1;
             @media (min-width: 992px) {
               width: 70%;
+              order: 0;
             }
             &__item {
-              width: 33.3333333%;
-              flex: 0 0 33.3333333%;
+              width: 100%;
+              flex: 0 0 100%;
               text-align: center;
               position: relative;
               padding-top: 2.8rem;
               padding-left: 30px;
               padding-right: 30px;
               margin-bottom: 7rem;
+              @media (min-width: 992px) {
+                width: 33.3333333%;
+                flex: 0 0 33.3333333%;
+              }
               span {
                 font-weight: bold;
                 font-size: 5rem;
@@ -127,13 +139,20 @@ const CollapseList = ({ primary, fields }) => {
           .description {
             width: 100%;
             flex: 0 0 100%;
+            order: 0;
+            padding: 0 15px;
             @media (min-width: 992px) {
+              order: 1;
               width: 30%;
               flex: 0 0 30%;
+              padding: 0;
             }
             img {
-              display: block;
+              display: none;
               margin: auto;
+              @media (min-width: 992px) {
+                display: block;
+              }
               &:nth-of-type(1) {
                 opacity: 0.2;
                 margin-bottom: 4rem;

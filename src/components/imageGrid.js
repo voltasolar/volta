@@ -34,9 +34,11 @@ const ImageGrid = ({ primary, fields }) => {
             text-align: center;
             padding-left: 15px;
             padding-right: 15px;
+            margin-bottom: 4rem;
             @media (min-width: 768px) {
               width: 25%;
               flex: 0 0 25%;
+              margin-bottom: 0;
             }
             h3 {
               text-transform: uppercase;
@@ -51,9 +53,13 @@ const ImageGrid = ({ primary, fields }) => {
           }
           &__image {
             position: relative;
-            width: 100%;
+            width: 70%;
             margin: auto;
-            margin-bottom: 70px;
+            margin-bottom: 30px;
+            @media (min-width: 768px) {
+              width: 100%;
+              margin-bottom: 70px;
+            }
             &:after {
               content: "";
               display: block;

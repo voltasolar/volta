@@ -17,13 +17,21 @@ const TextGrid = ({ primary, fields }) => {
           }
           .text-grid {
             background-color: ${colors.yellow};
-            padding: 57px 60px 120px 160px;
+            padding: 15px;
+            @media (min-width: 768px) {
+              padding: 57px 60px 120px 160px;
+            }
             h2 {
               text-transform: uppercase;
               letter-spacing: 0.2em;
               font-weight: bold;
               font-size: 1.2rem;
-              margin-bottom: 160px;
+              margin-bottom: 80px;
+              text-align: center;
+              @media (min-width: 768px) {
+                text-align: left;
+                margin-bottom: 160px;
+              }
             }
             &__wrapper {
               display: flex;
@@ -32,9 +40,12 @@ const TextGrid = ({ primary, fields }) => {
             &__deco {
               width: 75%;
               height: auto;
-              display: block;
               margin: auto;
               margin-bottom: 2rem;
+              display: none;
+              @media (min-width: 768px) {
+                display: block;
+              }
             }
             &__item {
               width: 100%;
@@ -44,12 +55,14 @@ const TextGrid = ({ primary, fields }) => {
               cursor: pointer;
               background: transparent;
               border: none;
+              margin-bottom: 3rem;
               @media (min-width: 768px) {
                 width: 25%;
                 flex: 0 0 25%;
+                margin-bottom: 0;
               }
               h3 {
-                font-weight: normal;
+                font-weight: bold;
                 text-transform: uppercase;
                 letter-spacing: 0.2em;
                 text-align: center;
@@ -57,11 +70,16 @@ const TextGrid = ({ primary, fields }) => {
                 margin-top: 0;
                 height: 2.5rem;
                 margin-bottom: 40px;
+                @media (min-width: 768px) {
+                  font-weight: normal;
+                }
               }
               p {
-                opacity: 0;
-                transform: translateY(10px);
-                transition: all 0.3s ease-in-out;
+                @media (min-width: 768px) {
+                  opacity: 0;
+                  transform: translateY(10px);
+                  transition: all 0.3s ease-in-out;
+                }
               }
               &--active {
                 h3 {

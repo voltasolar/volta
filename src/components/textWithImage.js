@@ -41,6 +41,10 @@ const TextWithImage = ({ primary, fields }) => {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+            margin-bottom: 3rem;
+            @media (min-width: 768px) {
+              margin-bottom: 0;
+            }
             h3 {
               text-transform: uppercase;
               font-weight: bold;
@@ -68,8 +72,18 @@ const TextWithImage = ({ primary, fields }) => {
             }
             &__content,
             &__image {
-              width: 40%;
-              flex: 0 0 40%;
+              width: 100%;
+              flex: 0 0 100%;
+              @media (min-width: 768px) {
+                width: 40%;
+                flex: 0 0 40%;
+              }
+            }
+            &__content {
+              margin-bottom: 2rem;
+              @media (min-width: 768px) {
+                margin-bottom: 0;
+              }
             }
             &__image {
               margin-left: auto;
@@ -124,7 +138,9 @@ const TextWithImage = ({ primary, fields }) => {
             }
             &:nth-of-type(even) {
               .block-item__content {
-                order: 1;
+                @media (min-width: 768px) {
+                  order: 1;
+                }
               }
               .block-item__image {
                 order: 0;

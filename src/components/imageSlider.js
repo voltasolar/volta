@@ -52,18 +52,28 @@ const ImageSlider = ({ fields }) => {
             top: 0;
             bottom: 0;
             margin: auto;
-            width: 56px;
-            height: 54px;
+            width: 30px;
+            height: 35px;
             z-index: 2;
             background-color: ${colors.yellow};
             border: none;
+            @media (min-width: 768px) {
+              width: 56px;
+              height: 54px;
+            }
             &.slick-prev {
               left: 0;
-              transform: translateX(-50%);
+              transform: translateX(-15px);
+              @media (min-width: 768px) {
+                transform: translateX(-50%);
+              }
             }
             &.slick-next {
               right: 0;
-              transform: translateX(50%);
+              transform: translateX(15px);
+              @media (min-width: 768px) {
+                transform: translateX(50%);
+              }
             }
           }
         `}

@@ -24,7 +24,10 @@ const HeroSlider = ({ slides }) => {
             &:after {
               content: "";
               display: block;
-              padding-top: 49%;
+              padding-top: 120%;
+              @media (min-width: 768px) {
+                padding-top: 49%;
+              }
             }
           }
           img {
@@ -51,8 +54,11 @@ const HeroSlider = ({ slides }) => {
             &__inner {
               padding-left: 15px;
               padding-right: 15px;
-              width: 35%;
+              width: 100%;
               margin: auto;
+              @media (min-width: 768px) {
+                width: 35%;
+              }
             }
             h2 {
               text-transform: uppercase;
@@ -64,7 +70,7 @@ const HeroSlider = ({ slides }) => {
           }
           .slick-dots {
             position: absolute;
-            bottom: 60px;
+            bottom: 15px;
             left: 0;
             right: 0;
             margin: auto;
@@ -74,6 +80,9 @@ const HeroSlider = ({ slides }) => {
             display: flex !important;
             align-items: center;
             justify-content: center;
+            @media (min-width: 768px) {
+              bottom: 60px;
+            }
             li {
               width: 10px;
               height: 10px;
@@ -117,6 +126,7 @@ const HeroSlider = ({ slides }) => {
                     <Img
                       fluid={sharpImage.childImageSharp.fluid}
                       alt={slide.image.alt}
+                      style={{ height: "100%" }}
                     />
                   </div>
                 ) : (
