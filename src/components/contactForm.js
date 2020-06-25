@@ -238,7 +238,6 @@ const ContactForm = ({ primary }) => {
             <input
               id="receipt"
               type="file"
-              id="file"
               name="attachment"
               onChange={handleFileUpload}
             />
