@@ -219,7 +219,6 @@ const ContactForm = ({ primary }) => {
               type="text"
               placeholder="Nombre*"
               name="Nombre"
-              value={inputs.name}
               required
             />
             <input
@@ -227,7 +226,6 @@ const ContactForm = ({ primary }) => {
               type="email"
               placeholder="Correo*"
               name="_replyto"
-              value={inputs.email}
               required
             />
             <input
@@ -236,7 +234,6 @@ const ContactForm = ({ primary }) => {
               placeholder="Pago promedio bimestral a CFE*"
               min="0"
               name="Pago promedio bimestral a CFE"
-              value={inputs.averagePayment}
             />
             <input
               id="receipt"
@@ -244,7 +241,6 @@ const ContactForm = ({ primary }) => {
               id="file"
               name="attachment"
               onChange={handleFileUpload}
-              value={inputs.receipt}
             />
             <label htmlFor="file">
               <span>Sube tu recibo de luz (opcional)</span>
