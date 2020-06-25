@@ -40,7 +40,7 @@ const ContactForm = ({ primary }) => {
       //url: "https://formspree.io/xzbjvwbp",
       url: "/",
       data: new FormData(e.target),
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
     })
       .then(res => {
         handleServerResponse(
