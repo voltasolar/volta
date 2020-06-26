@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import useSlices from "../utils/useSlices"
 import HeroSlider from "../components/heroSlider"
 import TextWithTitle from "../components/textWithTitle"
@@ -15,6 +16,7 @@ const HomePage = () => {
   const slices = useSlices()
   return (
     <Layout>
+      <SEO title="Inicio" />
       {slices.map((slice, index) => {
         switch (slice.type) {
           case "hero_slider":

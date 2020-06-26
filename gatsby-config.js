@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Volta Solar Energy Solutions`,
+    description: `Somos una empresa encargada de generar impactos económicos y ambientales a través de energías renovables e innovación tecnológica mediante la instalación de paneles solares.`,
+    author: `@oswaldo_zc`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

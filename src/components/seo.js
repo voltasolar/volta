@@ -68,7 +68,30 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Corporation",
+          name: "Volta Solar",
+          alternateName: "Volta Solar Energy Solutions",
+          url: "https://voltasolarenergy.com",
+          logo:
+            "https://voltasolarenergy.com/static/logo-8f6aeb8b253f0475c47ad2d0ec22ff25.svg",
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "461 169 8353",
+            contactType: "customer service",
+            areaServed: "MX",
+            availableLanguage: "es",
+          },
+          sameAs: [
+            "https://www.facebook.com/volta.solar.energy",
+            "https://www.instagram.com/volta.solar.energy",
+          ],
+        })}
+      </script>
+    </Helmet>
   )
 }
 
