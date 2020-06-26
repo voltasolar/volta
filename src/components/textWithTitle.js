@@ -10,6 +10,7 @@ const TextWithTitle = ({ content }) => {
         css={css`
           padding-top: 120px;
           padding-bottom: 120px;
+          overflow: hidden;
           h2,
           p {
             margin: 0;

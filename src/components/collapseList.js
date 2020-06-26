@@ -94,7 +94,7 @@ const CollapseList = ({ primary, fields }) => {
                 margin: auto;
                 margin-bottom: 3rem;
               }
-              &:not(.active) {
+              & > div:not(.active) {
                 .list__item-content {
                   max-height: 0;
                 }
@@ -178,32 +178,34 @@ const CollapseList = ({ primary, fields }) => {
               return (
                 <div
                   key={`list-item-${index}`}
-                  className={`list__item ${active === index ? "active" : ""}`}
                   data-sal="slide-up"
+                  className="list__item"
                 >
-                  <span>{index + 1}</span>
-                  <h3>{field.title[0].text}</h3>
-                  <div
-                    id={`list-item-content-${index}`}
-                    className="list__item-content"
-                  >
-                    {field.content.length > 1 ? (
-                      <ul>
-                        {field.content.map((item, index) => (
-                          <li key={`list-item-${index}`}>{item.text}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p>{field.content[0].text}</p>
-                    )}
+                  <div className={`${active === index ? "active" : ""}`}>
+                    <span>{index + 1}</span>
+                    <h3>{field.title[0].text}</h3>
+                    <div
+                      id={`list-item-content-${index}`}
+                      className="list__item-content"
+                    >
+                      {field.content.length > 1 ? (
+                        <ul>
+                          {field.content.map((item, index) => (
+                            <li key={`list-item-${index}`}>{item.text}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p>{field.content[0].text}</p>
+                      )}
+                    </div>
+                    <button
+                      onClick={event => {
+                        toggleActive(event, index)
+                      }}
+                    >
+                      {active === index ? "-" : "+"}
+                    </button>
                   </div>
-                  <button
-                    onClick={event => {
-                      toggleActive(event, index)
-                    }}
-                  >
-                    {active === index ? "-" : "+"}
-                  </button>
                 </div>
               )
             })}

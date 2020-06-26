@@ -11,6 +11,7 @@ const TextGrid = ({ primary, fields }) => {
         css={css`
           padding-left: 15px;
           padding-right: 15px;
+          overflow: hidden;
           @media (min-width: 768px) {
             padding-left: 45px;
             padding-right: 45px;
@@ -18,6 +19,10 @@ const TextGrid = ({ primary, fields }) => {
           .text-grid {
             background-color: ${colors.yellow};
             padding: 15px;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              transform: scale(0.99);
+            }
             @media (min-width: 992px) {
               padding: 57px 60px 120px 160px;
             }
@@ -85,7 +90,8 @@ const TextGrid = ({ primary, fields }) => {
                   transition: all 0.3s ease-in-out;
                 }
               }
-              &--active {
+              &--active,
+              &:hover {
                 h3 {
                   font-weight: bold;
                 }

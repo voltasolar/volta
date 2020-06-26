@@ -14,6 +14,7 @@ const TextWithImage = ({ primary, fields }) => {
         css={css`
           padding-top: 80px;
           padding-bottom: 80px;
+          overflow: hidden;
           h2 {
             text-align: center;
             text-transform: uppercase;

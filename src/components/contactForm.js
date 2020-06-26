@@ -61,6 +61,7 @@ const ContactForm = ({ primary }) => {
         css={css`
           display: flex;
           flex-wrap: wrap;
+          overflow: hidden;
           .sr-only {
             position: absolute;
             width: 1px;
