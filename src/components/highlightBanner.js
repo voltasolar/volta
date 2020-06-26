@@ -26,14 +26,17 @@ const HightlightBanner = ({ primary }) => {
             display: flex;
             align-items: center;
             text-align: center;
-            @media (min-width: 992px) {
+            @media (min-width: 768px) {
               position: absolute;
               top: 0;
               bottom: 0;
               right: 0;
               margin: auto;
-              width: 28%;
+              width: 35%;
               text-align: left;
+            }
+            @media (min-width: 992px) {
+              width: 28%;
             }
           }
           .image-wrapper {
@@ -50,7 +53,7 @@ const HightlightBanner = ({ primary }) => {
               left: 0;
               right: 0;
               margin: auto;
-              @media (min-width: 992px) {
+              @media (min-width: 768px) {
                 width: 43%;
               }
             }
@@ -59,7 +62,7 @@ const HightlightBanner = ({ primary }) => {
               display: block;
               width: 85%;
               height: auto;
-              @media (min-width: 992px) {
+              @media (min-width: 768px) {
                 width: 60%;
               }
             }
@@ -69,22 +72,27 @@ const HightlightBanner = ({ primary }) => {
               bottom: 20%;
               width: 36%;
               display: none;
-              @media (min-width: 992px) {
+              @media (min-width: 768px) {
                 display: block;
               }
             }
           }
         `}
       >
-        <h2>{primary.title[0].text}</h2>
+        <h2 data-sal="slide-up">{primary.title[0].text}</h2>
         <div className="row">
           <div className="image-wrapper">
             <img
               src={Vector}
               alt="Decoration"
               className="image-wrapper__deco"
+              data-sal="fade"
             />
-            <div className="image-wrapper__phone">
+            <div
+              className="image-wrapper__phone"
+              data-sal="fade"
+              data-sal-delay="300"
+            >
               {sharpImage ? (
                 <Img
                   fluid={sharpImage.childImageSharp.fluid}
@@ -98,8 +106,12 @@ const HightlightBanner = ({ primary }) => {
               src={Vector2}
               alt="decoration"
               className="image-wrapper__deco2"
+              data-sal="fade"
+              data-sal-delay="500"
             />
-            <p>{primary.content[0].text}</p>
+            <p data-sal="fade" data-sal-delay="500">
+              {primary.content[0].text}
+            </p>
           </div>
         </div>
       </div>

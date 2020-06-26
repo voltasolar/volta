@@ -66,6 +66,10 @@ const CollapseList = ({ primary, fields }) => {
               padding-left: 30px;
               padding-right: 30px;
               margin-bottom: 7rem;
+              @media (min-width: 768px) {
+                width: 50%;
+                flex: 0 0 50%;
+              }
               @media (min-width: 992px) {
                 width: 33.3333333%;
                 flex: 0 0 33.3333333%;
@@ -167,7 +171,7 @@ const CollapseList = ({ primary, fields }) => {
           }
         `}
       >
-        <h2>{primary.title[0].text}</h2>
+        <h2 data-sal="slide-up">{primary.title[0].text}</h2>
         <div className="row">
           <div className="list">
             {fields.map((field, index) => {
@@ -175,6 +179,7 @@ const CollapseList = ({ primary, fields }) => {
                 <div
                   key={`list-item-${index}`}
                   className={`list__item ${active === index ? "active" : ""}`}
+                  data-sal="slide-up"
                 >
                   <span>{index + 1}</span>
                   <h3>{field.title[0].text}</h3>
@@ -204,11 +209,13 @@ const CollapseList = ({ primary, fields }) => {
             })}
           </div>
           <div className="description">
-            <img src={Vector} alt="decoration" />
+            <img src={Vector} alt="decoration" data-sal="fade" />
             {primary.description.map((paragraph, index) => (
-              <p key={`description-paragraph-${index}`}>{paragraph.text}</p>
+              <p key={`description-paragraph-${index}`} data-sal="fade">
+                {paragraph.text}
+              </p>
             ))}
-            <img src={Vector} alt="decoration" />
+            <img src={Vector} alt="decoration" data-sal="fade" />
           </div>
         </div>
       </div>

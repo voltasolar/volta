@@ -42,7 +42,7 @@ const TextWithImage = ({ primary, fields }) => {
             flex-wrap: wrap;
             align-items: center;
             margin-bottom: 3rem;
-            @media (min-width: 768px) {
+            @media (min-width: 992px) {
               margin-bottom: 0;
             }
             h3 {
@@ -173,13 +173,16 @@ const TextWithImage = ({ primary, fields }) => {
           }
         `}
       >
-        <h2>{primary.title[0].text}</h2>
+        <h2 data-sal="slide-up">{primary.title[0].text}</h2>
         <div className="block-items">
           {fields.map((field, index) => {
             const sharpImage = field.imageSharp
             return (
               <div className="block-item" key={`block-item-${index}`}>
-                <div className="block-item__content">
+                <div
+                  className="block-item__content"
+                  data-sal={index % 2 ? "slide-left" : "slide-right"}
+                >
                   <h3>{field.title[0].text}</h3>
                   <ul>
                     {field.content.map((contentBlock, index) => (
@@ -189,7 +192,10 @@ const TextWithImage = ({ primary, fields }) => {
                     ))}
                   </ul>
                 </div>
-                <div className="block-item__image">
+                <div
+                  className="block-item__image"
+                  data-sal={index % 2 ? "slide-right" : "slide-left"}
+                >
                   <div className="block-item__bg"></div>
                   {index % 2 ? (
                     <img

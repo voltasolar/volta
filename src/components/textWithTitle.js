@@ -46,6 +46,7 @@ const TextWithTitle = ({ content }) => {
                 flex: 0 0 40%;
               }
             `}
+            data-sal="slide-right"
           >
             <h2>{content.title[0].text}</h2>
           </div>
@@ -60,6 +61,7 @@ const TextWithTitle = ({ content }) => {
                 flex: 0 0 55%;
               }
             `}
+            data-sal="slide-left"
           >
             <p>{content.text[0].text}</p>
           </div>

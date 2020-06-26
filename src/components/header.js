@@ -54,8 +54,10 @@ const Header = () => {
                   background-color: ${colors.darkYellow};
                 }
                 @media (min-width: 768px) {
-                  padding: 0 70px;
                   width: auto;
+                }
+                @media (min-width: 992px) {
+                  padding: 0 70px;
                 }
               }
             }
@@ -68,7 +70,7 @@ const Header = () => {
               padding-right: 15px;
               padding-top: 13px;
               padding-bottom: 13px;
-              @media (min-width: 768px) {
+              @media (min-width: 992px) {
                 padding-left: 0;
                 padding-right: 40px;
               }
@@ -81,7 +83,7 @@ const Header = () => {
                 }
                 &:nth-of-type(1) {
                   margin-right: 15px;
-                  @media (min-width: 768px) {
+                  @media (min-width: 992px) {
                     margin-left: auto;
                   }
                   img {
@@ -114,7 +116,7 @@ const Header = () => {
             }
             nav {
               display: none;
-              @media (min-width: 768px) {
+              @media (min-width: 992px) {
                 display: block;
               }
               ul {
@@ -169,7 +171,7 @@ const Header = () => {
                   bottom: 0;
                 }
               }
-              @media (min-width: 768px) {
+              @media (min-width: 992px) {
                 display: none;
               }
             }
@@ -234,7 +236,7 @@ const Header = () => {
           &.open-menu {
             transform: translateX(0);
           }
-          @media (min-width: 768px) {
+          @media (min-width: 992px) {
             display: none;
           }
           ul {
@@ -259,6 +261,10 @@ const Header = () => {
             position: absolute;
             top: 15px;
             right: 15px;
+            @media (min-width: 768px) {
+              top: 30px;
+              right: 30px;
+            }
             span {
               width: 100%;
               height: 2px;

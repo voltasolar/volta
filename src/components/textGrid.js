@@ -18,7 +18,7 @@ const TextGrid = ({ primary, fields }) => {
           .text-grid {
             background-color: ${colors.yellow};
             padding: 15px;
-            @media (min-width: 768px) {
+            @media (min-width: 992px) {
               padding: 57px 60px 120px 160px;
             }
             h2 {
@@ -57,6 +57,10 @@ const TextGrid = ({ primary, fields }) => {
               border: none;
               margin-bottom: 3rem;
               @media (min-width: 768px) {
+                width: 50%;
+                flex: 0 0 50%;
+              }
+              @media (min-width: 992px) {
                 width: 25%;
                 flex: 0 0 25%;
                 margin-bottom: 0;
@@ -95,9 +99,15 @@ const TextGrid = ({ primary, fields }) => {
         `}
       >
         <div className="text-grid">
-          <h2>{primary.title[0].text}</h2>
-          <img src={Vector} alt="decoración" className="text-grid__deco" />
-          <div className="text-grid__wrapper">
+          <h2 data-sal="slide-up">{primary.title[0].text}</h2>
+          <img
+            src={Vector}
+            alt="decoración"
+            className="text-grid__deco"
+            data-sal="fade"
+            data-sal-duration="1000"
+          />
+          <div className="text-grid__wrapper" data-sal="slide-up">
             {fields.map((field, index) => (
               <button
                 className={`text-grid__item${

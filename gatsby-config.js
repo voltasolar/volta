@@ -10,6 +10,10 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {},
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

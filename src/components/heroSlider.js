@@ -57,6 +57,9 @@ const HeroSlider = ({ slides }) => {
               width: 100%;
               margin: auto;
               @media (min-width: 768px) {
+                width: 60%;
+              }
+              @media (min-width: 992px) {
                 width: 35%;
               }
             }
@@ -80,7 +83,7 @@ const HeroSlider = ({ slides }) => {
             display: flex !important;
             align-items: center;
             justify-content: center;
-            @media (min-width: 768px) {
+            @media (min-width: 992px) {
               bottom: 60px;
             }
             li {
@@ -106,7 +109,7 @@ const HeroSlider = ({ slides }) => {
             return (
               <div className="hero-slider__slide" key={`slide-${index}`}>
                 <div className="slide-content">
-                  <div className="slide-content__inner">
+                  <div className="slide-content__inner" data-sal="slide-up">
                     <h2>{slide.headline[0].text}</h2>
                     <Button onClick={() => scrollTo("#contacto")}>
                       Instala tus paneles

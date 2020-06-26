@@ -34,10 +34,24 @@ const Footer = () => {
               }
             }
           }
+          .footer-logo {
+            flex: 0 0 100%;
+            text-align: center;
+            @media (min-width: 768px) {
+              text-align: left;
+            }
+            @media (min-width: 992px) {
+              flex: auto;
+            }
+          }
           .footer-contact {
             max-width: 100%;
             flex: 0 0 100%;
             margin-bottom: 2rem;
+            @media (min-width: 768px) {
+              max-width: 50%;
+              flex: 0 0 50%;
+            }
             @media (min-width: 992px) {
               max-width: 30%;
               flex: 0 0 30%;
@@ -51,7 +65,9 @@ const Footer = () => {
         `}
       >
         <div className="container">
-          <img src={Logo} alt="Volta Solar" />
+          <div className="footer-logo">
+            <img src={Logo} alt="Volta Solar" />
+          </div>
           <div className="footer-contact">
             <h4>Atención a clientes</h4>
             <a href="tel:4611698353">461 169 8353</a>

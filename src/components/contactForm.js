@@ -79,9 +79,11 @@ const ContactForm = ({ primary }) => {
             padding: 70px 15px;
             position: relative;
             overflow: hidden;
-            @media (min-width: 992px) {
+            @media (min-width: 768px) {
               width: 50%;
               flex: 0 0 50%;
+            }
+            @media (min-width: 992px) {
               padding: 70px 100px;
             }
             input,
@@ -129,9 +131,11 @@ const ContactForm = ({ primary }) => {
             flex: 0 0 100%;
             padding: 100px 15px;
             text-align: center;
-            @media (min-width: 992px) {
+            @media (min-width: 768px) {
               width: 50%;
               flex: 0 0 50%;
+            }
+            @media (min-width: 992px) {
               padding: 100px 70px;
             }
             h2 {
@@ -199,7 +203,7 @@ const ContactForm = ({ primary }) => {
           }
         `}
       >
-        <div className="form-wrapper">
+        <div className="form-wrapper" data-sal="slide-right">
           <form
             onSubmit={handleFormSubmit}
             data-netlify="true"
@@ -268,7 +272,7 @@ const ContactForm = ({ primary }) => {
             )}
           </form>
         </div>
-        <div className="form-text">
+        <div className="form-text" data-sal="slide-left">
           <h2>
             {primary.titulo.map((line, index) => (
               <span key={`contact-form-line-${index}`}>{line.text}</span>

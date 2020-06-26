@@ -91,13 +91,17 @@ const ImageGrid = ({ primary, fields }) => {
       `}
     >
       <div className="container">
-        <h2>{primary.title[0].text}</h2>
+        <h2 data-sal="slide-up">{primary.title[0].text}</h2>
         <img src={Vector} alt="title decoration" className="image-grid__deco" />
         <div className="item-grid row">
           {fields.map((field, index) => {
             const sharpImage = field.imageSharp
             return (
-              <div key={`grid-item-${index}`} className="item-grid__item">
+              <div
+                key={`grid-item-${index}`}
+                className="item-grid__item"
+                data-sal="slide-up"
+              >
                 <div className="item-grid__image">
                   {!(index % 2) && (
                     <img

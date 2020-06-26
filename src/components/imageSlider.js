@@ -77,6 +77,7 @@ const ImageSlider = ({ fields }) => {
             }
           }
         `}
+        data-sal="fade"
       >
         <Slider {...settings}>
           {fields.map((slide, index) => {
