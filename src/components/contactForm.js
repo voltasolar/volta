@@ -80,9 +80,11 @@ const ContactForm = ({ primary }) => {
             padding: 70px 15px;
             position: relative;
             overflow: hidden;
+            order: 1;
             @media (min-width: 768px) {
               width: 50%;
               flex: 0 0 50%;
+              order: 0;
             }
             @media (min-width: 992px) {
               padding: 70px 100px;
@@ -132,9 +134,11 @@ const ContactForm = ({ primary }) => {
             flex: 0 0 100%;
             padding: 100px 15px;
             text-align: center;
+            order: 0;
             @media (min-width: 768px) {
               width: 50%;
               flex: 0 0 50%;
+              order: 1;
             }
             @media (min-width: 992px) {
               padding: 100px 70px;

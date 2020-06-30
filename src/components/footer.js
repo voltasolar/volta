@@ -48,9 +48,11 @@ const Footer = () => {
             max-width: 100%;
             flex: 0 0 100%;
             margin-bottom: 2rem;
+            text-align: center;
             @media (min-width: 768px) {
               max-width: 50%;
               flex: 0 0 50%;
+              text-align: left;
             }
             @media (min-width: 992px) {
               max-width: 30%;
