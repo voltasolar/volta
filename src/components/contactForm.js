@@ -81,6 +81,8 @@ const ContactForm = ({ primary }) => {
             position: relative;
             overflow: hidden;
             order: 1;
+            display: flex;
+            align-items: center;
             @media (min-width: 768px) {
               width: 50%;
               flex: 0 0 50%;
@@ -88,6 +90,9 @@ const ContactForm = ({ primary }) => {
             }
             @media (min-width: 992px) {
               padding: 70px 100px;
+            }
+            form {
+              width: 100%;
             }
             input,
             textarea,
