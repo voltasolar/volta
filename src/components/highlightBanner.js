@@ -1,11 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import { css } from "@emotion/core"
 import Img from "gatsby-image"
 import Vector from "../images/highlight-deco.svg"
 import Vector2 from "../images/highlight-deco-2.svg"
+import VisibilitySensor from "react-visibility-sensor"
 
 const HightlightBanner = ({ primary }) => {
   const sharpImage = primary.imageSharp
+
+  const [animatedImage, setAnimatedImage] = useState(false)
+
+  const testing = isVisible => {
+    isVisible ? setAnimatedImage(true) : setAnimatedImage(false)
+  }
   return (
     <>
       <div
@@ -62,6 +69,12 @@ const HightlightBanner = ({ primary }) => {
               display: block;
               width: 85%;
               height: auto;
+              transform: rotate(-15deg);
+              transition: all 0.3s ease-in-out;
+              transition-delay: 0.5s;
+              &.animated {
+                transform: rotate(0);
+              }
               @media (min-width: 768px) {
                 width: 60%;
               }
@@ -82,12 +95,15 @@ const HightlightBanner = ({ primary }) => {
         <h2 data-sal="slide-up">{primary.title[0].text}</h2>
         <div className="row">
           <div className="image-wrapper">
-            <img
-              src={Vector}
-              alt="Decoration"
-              className="image-wrapper__deco"
-              data-sal="fade"
-            />
+            <VisibilitySensor onChange={testing} scrollCheck partialVisibility>
+              <img
+                src={Vector}
+                alt="Decoration"
+                className={`image-wrapper__deco ${
+                  animatedImage ? "animated" : ""
+                }`}
+              />
+            </VisibilitySensor>
             <div
               className="image-wrapper__phone"
               data-sal="fade"
