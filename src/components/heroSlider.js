@@ -110,7 +110,7 @@ const HeroSlider = ({ slides }) => {
               <div className="hero-slider__slide" key={`slide-${index}`}>
                 <div className="slide-content">
                   <div className="slide-content__inner" data-sal="slide-up">
-                    <h2>{slide.headline[0].text}</h2>
+                    <h2>{slide.headline.map(line => line.text)}</h2>
                     <Button onClick={() => scrollTo("#contacto")}>
                       Instala tus paneles
                     </Button>
