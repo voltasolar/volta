@@ -31,6 +31,7 @@
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.0.0",
     "react-slick": "^0.26.1",
+    "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

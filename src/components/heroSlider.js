@@ -113,10 +113,10 @@ const HeroSlider = ({ slides }) => {
                     <h2>
                       {slide.headline.map((line, index) => {
                         return (
-                          <>
+                          <span key={`hero-slider-title-${index}`}>
                             {line.text}
                             {index !== slide.headline.length - 1 && <br />}
-                          </>
+                          </span>
                         )
                       })}
                     </h2>
