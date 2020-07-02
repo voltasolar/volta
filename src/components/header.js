@@ -228,7 +228,7 @@ const Header = () => {
             </a>
           </div>
           <button onClick={() => scrollTo("#contacto")}>
-            Da clic e instala tus paneles
+            Da clic, ¡instala tus paneles!
           </button>
         </div>
         <div className="bottom-bar">
