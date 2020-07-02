@@ -24,7 +24,7 @@ const TextGrid = ({ primary, fields }) => {
               transform: scale(0.99);
             }
             @media (min-width: 992px) {
-              padding: 57px 60px 120px 160px;
+              padding: 57px 60px 120px 60px;
             }
             h2 {
               text-transform: uppercase;
@@ -34,7 +34,6 @@ const TextGrid = ({ primary, fields }) => {
               margin-bottom: 80px;
               text-align: center;
               @media (min-width: 768px) {
-                text-align: left;
                 margin-bottom: 160px;
               }
             }
@@ -58,9 +57,14 @@ const TextGrid = ({ primary, fields }) => {
               padding-left: 10px;
               padding-right: 10px;
               cursor: pointer;
-              background: transparent;
-              border: none;
               margin-bottom: 3rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              button {
+                background: transparent;
+                border: none;
+              }
               @media (min-width: 768px) {
                 width: 50%;
                 flex: 0 0 50%;
@@ -80,13 +84,13 @@ const TextGrid = ({ primary, fields }) => {
                 height: 2.5rem;
                 margin-bottom: 40px;
                 @media (min-width: 768px) {
-                  font-weight: normal;
+                  /* font-weight: normal; */
                 }
               }
               p {
                 @media (min-width: 768px) {
-                  opacity: 0;
-                  transform: translateY(10px);
+                  /* opacity: 0;
+                  transform: translateY(10px); */
                   transition: all 0.3s ease-in-out;
                 }
               }
@@ -113,18 +117,23 @@ const TextGrid = ({ primary, fields }) => {
             data-sal="fade"
             data-sal-duration="1000"
           />
-          <div className="text-grid__wrapper" data-sal="slide-up">
+          <div className="text-grid__wrapper">
             {fields.map((field, index) => (
-              <button
-                className={`text-grid__item${
-                  index === activeItem ? " text-grid__item--active" : ""
-                }`}
+              <div
+                className="text-grid__item"
+                data-sal="slide-up"
                 key={`text-grid-item-${index}`}
-                onClick={() => setActiveItem(index)}
               >
-                <h3>{field.title[0].text}</h3>
-                <p>{field.content[0].text}</p>
-              </button>
+                <button
+                  className={`${
+                    index === activeItem ? " text-grid__item--active" : ""
+                  }`}
+                  onClick={() => setActiveItem(index)}
+                >
+                  <h3>{field.title[0].text}</h3>
+                  <p>{field.content[0].text}</p>
+                </button>
+              </div>
             ))}
           </div>
         </div>

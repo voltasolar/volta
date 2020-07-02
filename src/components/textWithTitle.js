@@ -11,6 +11,9 @@ const TextWithTitle = ({ content }) => {
           padding-top: 120px;
           padding-bottom: 120px;
           overflow: hidden;
+          .row {
+            align-items: center;
+          }
           h2,
           p {
             margin: 0;

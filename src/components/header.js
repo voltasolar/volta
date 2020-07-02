@@ -3,9 +3,9 @@ import { colors } from "./colors"
 import { css } from "@emotion/core"
 import Facebook from "../images/facebook-icon.svg"
 import Instagram from "../images/instagram-icon.svg"
+import Whatsapp from "../images/whatsapp.svg"
 import Logo from "../images/logo.svg"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import Headroom from "react-headroom"
 
 const Header = () => {
   const [active, setActive] = useState(false)
@@ -34,14 +34,14 @@ const Header = () => {
     <>
       <header
         css={css`
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1500;
           .helper-bar {
             display: flex;
             flex-wrap: wrap;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1500;
             button {
               background-color: ${colors.yellow};
               padding: 15px;
@@ -104,17 +104,23 @@ const Header = () => {
                   height: auto;
                 }
               }
+              &:nth-of-type(3) {
+                img {
+                  width: 20px;
+                  height: auto;
+                }
+              }
             }
           }
           .container {
             display: flex;
             align-items: center;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
             img {
               margin-right: auto;
               width: 50%;
-              max-width: 250px;
+              max-width: 195px;
               display: block;
               height: auto;
             }
@@ -207,32 +213,42 @@ const Header = () => {
             >
               <img src={Instagram} alt="instagram" />
             </a>
-            <a href="tel:4611698353">461 169 8353</a>
+            <a
+              href="tel:4611698353"
+              css={css`
+                display: flex;
+                align-items: center;
+                img {
+                  margin-right: 8px;
+                }
+              `}
+            >
+              <img src={Whatsapp} alt="whatsapp" />
+              461 169 8353
+            </a>
           </div>
           <button onClick={() => scrollTo("#contacto")}>
-            Instala tus paneles
+            Da click e instala tus paneles
           </button>
         </div>
         <div className="bottom-bar">
-          <Headroom style={{ background: "#fff", zIndex: "1400" }}>
-            <div className="container">
-              <img src={Logo} alt="Volta Solar" />
-              <button className="hamburger" type="button" onClick={toggleMenu}>
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-              <nav>
-                <ul>
-                  {menu.map(({ text, url }, index) => (
-                    <li key={`menu-item-${index}`}>
-                      <button onClick={() => scrollTo(url)}>{text}</button>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-          </Headroom>
+          <div className="container">
+            <img src={Logo} alt="Volta Solar" />
+            <button className="hamburger" type="button" onClick={toggleMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <nav>
+              <ul>
+                {menu.map(({ text, url }, index) => (
+                  <li key={`menu-item-${index}`}>
+                    <button onClick={() => scrollTo(url)}>{text}</button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
       </header>
       <nav
