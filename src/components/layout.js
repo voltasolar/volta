@@ -14,6 +14,10 @@ const Layout = ({ children }) => {
           display: flex;
           flex-direction: column;
           min-height: 100vh;
+          padding-top: 165px;
+          @media (min-width: 768px) {
+            padding-top: 133px;
+          }
         `}
       >
         <Header />
