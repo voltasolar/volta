@@ -69,7 +69,7 @@ const HightlightBanner = ({ primary }) => {
               display: block;
               width: 85%;
               height: auto;
-              transform: rotate(-15deg);
+              transform: rotate(-40deg);
               transition: all 0.3s ease-in-out;
               transition-delay: 0.5s;
               &.animated {

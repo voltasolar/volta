@@ -1,6 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 import Logo from "../images/volta-icon.svg"
+import Whatsapp from "../images/whatsapp.inline.svg"
 
 const Footer = () => {
   return (
@@ -62,6 +63,13 @@ const Footer = () => {
             a {
               display: block;
               margin-top: 1rem;
+              &:nth-of-type(1) {
+                display: flex;
+                align-items: center;
+                svg {
+                  margin-right: 8px;
+                }
+              }
             }
           }
         `}
@@ -72,7 +80,10 @@ const Footer = () => {
           </div>
           <div className="footer-contact">
             <h4>Atención a clientes</h4>
-            <a href="tel:4611698353">461 169 8353</a>
+            <a href="tel:4611698353">
+              <Whatsapp />
+              461 169 8353
+            </a>
             <a href="mailto:info@voltasolarenergy.com">
               info@voltasolarenergy.com
             </a>

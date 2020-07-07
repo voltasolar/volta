@@ -1,10 +1,33 @@
 import React, { useState } from "react"
-import { css } from "@emotion/core"
+import { css, keyframes } from "@emotion/core"
 import { colors } from "./colors"
-import Vector from "../images/list-deco.svg"
+import VisibilitySensor from "react-visibility-sensor"
+import Vector from "../images/list-deco.inline.svg"
+
+const blink = keyframes`
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  60% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+`
 
 const CollapseList = ({ primary, fields }) => {
   const [active, setActive] = useState(4)
+  const [svgOneAnimated, setSvgOneAnimated] = useState(false)
+  const [svgTwoAnimated, setSvgTwoAnimated] = useState(false)
+
+  const activateSvgOne = isVisible => {
+    isVisible && setSvgOneAnimated(true)
+  }
+
+  const activateSvgTwo = isVisible => {
+    isVisible && setSvgTwoAnimated(true)
+  }
+
   const toggleActive = (event, index) => {
     const panels = document.querySelectorAll(".list__item-content")
     const panel = document.getElementById(`list-item-content-${index}`)
@@ -157,18 +180,33 @@ const CollapseList = ({ primary, fields }) => {
               flex: 0 0 30%;
               padding: 0;
             }
-            img {
+            svg {
               display: none;
               margin: auto;
+              opacity: 0;
+              transition: all 0.3s ease-in-out;
+              &.animated {
+                path:nth-of-type(odd) {
+                  animation: ${blink} 1.2s linear 0.5s;
+                }
+                path:nth-of-type(even) {
+                  animation: ${blink} 2.4s linear 0.8s;
+                }
+              }
               @media (min-width: 992px) {
                 display: block;
               }
               &:nth-of-type(1) {
-                opacity: 0.2;
                 margin-bottom: 4rem;
+                &.animated {
+                  opacity: 0.2;
+                }
               }
               &:nth-of-type(2) {
                 margin-top: 4rem;
+                &.animated {
+                  opacity: 1;
+                }
               }
             }
             p {
@@ -217,13 +255,25 @@ const CollapseList = ({ primary, fields }) => {
             })}
           </div>
           <div className="description">
-            <img src={Vector} alt="decoration" data-sal="fade" />
+            <VisibilitySensor
+              onChange={activateSvgOne}
+              scrollCheck
+              partialVisibility
+            >
+              <Vector className={`${svgOneAnimated ? "animated" : ""}`} />
+            </VisibilitySensor>
             {primary.description.map((paragraph, index) => (
               <p key={`description-paragraph-${index}`} data-sal="fade">
                 {paragraph.text}
               </p>
             ))}
-            <img src={Vector} alt="decoration" data-sal="fade" />
+            <VisibilitySensor
+              onChange={activateSvgTwo}
+              scrollCheck
+              partialVisibility
+            >
+              <Vector className={`${svgTwoAnimated ? "animated" : ""}`} />
+            </VisibilitySensor>
           </div>
         </div>
       </div>
