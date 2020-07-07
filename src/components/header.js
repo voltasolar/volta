@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { colors } from "./colors"
 import { css } from "@emotion/core"
-import Facebook from "../images/facebook-icon.svg"
-import Instagram from "../images/instagram-icon.svg"
-import Whatsapp from "../images/whatsapp.svg"
-import Logo from "../images/logo.svg"
+import Facebook from "../images/facebook-icon.inline.svg"
+import Instagram from "../images/instagram-icon.inline.svg"
+import Whatsapp from "../images/whatsapp.inline.svg"
+import Logo from "../images/logo.inline.svg"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
 const Header = () => {
@@ -89,7 +89,7 @@ const Header = () => {
                 @media (min-width: 992px) {
                   margin-left: auto;
                 }
-                img {
+                svg {
                   width: 11px;
                   height: auto;
                 }
@@ -99,13 +99,13 @@ const Header = () => {
                 @media (min-width: 768px) {
                   margin-right: 40px;
                 }
-                img {
+                svg {
                   width: 20px;
                   height: auto;
                 }
               }
               &:nth-of-type(3) {
-                img {
+                svg {
                   width: 20px;
                   height: auto;
                 }
@@ -117,7 +117,7 @@ const Header = () => {
             align-items: center;
             padding-top: 1.2rem;
             padding-bottom: 1.2rem;
-            img {
+            svg {
               margin-right: auto;
               width: 50%;
               max-width: 195px;
@@ -204,26 +204,26 @@ const Header = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={Facebook} alt="facebook" />
+              <Facebook />
             </a>
             <a
               href="https://www.instagram.com/volta.solar.energy/?hl=es-la"
               target="_blank"
               rel="noreferrer"
             >
-              <img src={Instagram} alt="instagram" />
+              <Instagram />
             </a>
             <a
               href="tel:4611698353"
               css={css`
                 display: flex;
                 align-items: center;
-                img {
+                svg {
                   margin-right: 8px;
                 }
               `}
             >
-              <img src={Whatsapp} alt="whatsapp" />
+              <Whatsapp />
               461 169 8353
             </a>
           </div>
@@ -233,7 +233,7 @@ const Header = () => {
         </div>
         <div className="bottom-bar">
           <div className="container">
-            <img src={Logo} alt="Volta Solar" />
+            <Logo />
             <button className="hamburger" type="button" onClick={toggleMenu}>
               <span></span>
               <span></span>

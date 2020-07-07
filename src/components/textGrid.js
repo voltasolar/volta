@@ -112,10 +112,10 @@ const TextGrid = ({ primary, fields }) => {
           <h2 data-sal="slide-up">{primary.title[0].text}</h2>
           <img
             src={Vector}
-            alt="decoración"
             className="text-grid__deco"
             data-sal="fade"
             data-sal-duration="1000"
+            alt=""
           />
           <div className="text-grid__wrapper">
             {fields.map((field, index) => (
