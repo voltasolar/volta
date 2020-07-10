@@ -69,12 +69,16 @@ textarea {
   flex-wrap: wrap;
 }
 
+.headroom-wrapper {
+  pointer-events: none;
+}
 @media (max-width: 991px) {
   .headroom {
     top: 0;
     left: 0;
     right: 0;
     z-index: -1;
+    pointer-events: all;
   }
   .headroom--unfixed {
     position: relative;
