@@ -66,6 +66,10 @@ const Footer = () => {
               &:nth-of-type(1) {
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                @media (min-width: 768px) {
+                  justify-content: flex-start;
+                }
                 svg {
                   margin-right: 8px;
                 }
