@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Headroom from "react-headroom"
 import { colors } from "./colors"
 import { css } from "@emotion/core"
 import Facebook from "../images/facebook-icon.inline.svg"
@@ -188,12 +189,6 @@ const Header = () => {
           }
           .bottom-bar {
             background-color: #fff;
-            .headroom {
-              top: 92px !important;
-              @media (min-width: 768px) {
-                top: 48px !important;
-              }
-            }
           }
         `}
       >
@@ -231,25 +226,27 @@ const Header = () => {
             ¡Da clic! instala tus paneles
           </button>
         </div>
-        <div className="bottom-bar">
-          <div className="container">
-            <Logo />
-            <button className="hamburger" type="button" onClick={toggleMenu}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <nav>
-              <ul>
-                {menu.map(({ text, url }, index) => (
-                  <li key={`menu-item-${index}`}>
-                    <button onClick={() => scrollTo(url)}>{text}</button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+        <Headroom disableInlineStyles>
+          <div className="bottom-bar">
+            <div className="container">
+              <Logo />
+              <button className="hamburger" type="button" onClick={toggleMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              <nav>
+                <ul>
+                  {menu.map(({ text, url }, index) => (
+                    <li key={`menu-item-${index}`}>
+                      <button onClick={() => scrollTo(url)}>{text}</button>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
+        </Headroom>
       </header>
       <nav
         className={`${active ? "open-menu" : ""}`}
