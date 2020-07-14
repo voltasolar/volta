@@ -45,7 +45,6 @@ const Header = () => {
             flex-wrap: wrap;
             button {
               background-color: ${colors.yellow};
-              padding: 15px;
               border: 0;
               text-transform: uppercase;
               font-weight: bold;
@@ -54,14 +53,24 @@ const Header = () => {
               transition: all 0.3s ease-in-out;
               width: 100%;
               cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               &:hover {
                 background-color: ${colors.darkYellow};
               }
+              a {
+                padding: 15px;
+                display: block;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                @media (min-width: 992px) {
+                  padding: 0 70px;
+                }
+              }
               @media (min-width: 768px) {
                 width: auto;
-              }
-              @media (min-width: 992px) {
-                padding: 0 70px;
               }
             }
           }
@@ -118,10 +127,14 @@ const Header = () => {
             align-items: center;
             padding-top: 1.2rem;
             padding-bottom: 1.2rem;
-            svg {
+            .logo {
               margin-right: auto;
               width: 50%;
               max-width: 195px;
+            }
+            svg {
+              width: 100%;
+              height: auto;
               display: block;
               height: auto;
             }
@@ -229,7 +242,9 @@ const Header = () => {
         <Headroom disableInlineStyles>
           <div className="bottom-bar">
             <div className="container">
-              <Logo />
+              <AnchorLink to="/#hero-slider" className="logo">
+                <Logo />
+              </AnchorLink>
               <button className="hamburger" type="button" onClick={toggleMenu}>
                 <span></span>
                 <span></span>
