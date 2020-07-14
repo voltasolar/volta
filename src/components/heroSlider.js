@@ -18,6 +18,7 @@ const HeroSlider = ({ slides }) => {
   return (
     <>
       <div
+        id="hero-slider"
         css={css`
           .hero-slider__slide {
             position: relative;

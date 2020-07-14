@@ -247,9 +247,8 @@ const ContactForm = ({ primary }) => {
             <input
               id="phone"
               type="tel"
-              placeholder="Teléfono"
+              placeholder="Teléfono (opcional)"
               name="Teléfono"
-              required
             />
             <label htmlFor="averagePayment" className="sr-only">
               Pago promedio a la CFE
