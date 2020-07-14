@@ -4,7 +4,7 @@ import Slider from "react-slick"
 import { css } from "@emotion/core"
 import { colors } from "./colors"
 import Button from "./button"
-import scrollTo from "gatsby-plugin-smoothscroll"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const HeroSlider = ({ slides }) => {
   const settings = {
@@ -120,8 +120,8 @@ const HeroSlider = ({ slides }) => {
                         )
                       })}
                     </h2>
-                    <Button onClick={() => scrollTo("#contacto")}>
-                      Instala tus paneles
+                    <Button>
+                      <AnchorLink to="/#contacto" title="Instala tus paneles" />
                     </Button>
                   </div>
                 </div>

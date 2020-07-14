@@ -241,6 +241,16 @@ const ContactForm = ({ primary }) => {
               name="_replyto"
               required
             />
+            <label htmlFor="phone" className="sr-only">
+              Teléfono
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Teléfono"
+              name="Teléfono"
+              required
+            />
             <label htmlFor="averagePayment" className="sr-only">
               Pago promedio a la CFE
             </label>
