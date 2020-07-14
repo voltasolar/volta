@@ -8,7 +8,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
@@ -49,6 +48,12 @@ module.exports = {
         accessToken: `MC5YdWZKUHhJQUFDUUFmQ3FC.Qe-_vXvvv73vv70RGO-_ve-_ve-_vUBw77-9Iu-_vXrvv70oDO-_vXIz77-9IGsjJu-_ve-_vTfvv70O`,
         path: `/preview`,
         preview: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-anchor-links`,
+      options: {
+        offset: -100,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import Headroom from "react-headroom"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { colors } from "./colors"
 import { css } from "@emotion/core"
 import Facebook from "../images/facebook-icon.inline.svg"
 import Instagram from "../images/instagram-icon.inline.svg"
 import Whatsapp from "../images/whatsapp.inline.svg"
 import Logo from "../images/logo.inline.svg"
-import scrollTo from "gatsby-plugin-smoothscroll"
 
 const Header = () => {
   const [active, setActive] = useState(false)
@@ -222,8 +222,8 @@ const Header = () => {
               461 169 8353
             </a>
           </div>
-          <button onClick={() => scrollTo("#contacto")}>
-            ¡Da clic! instala tus paneles
+          <button>
+            <AnchorLink to="/#contacto" title="¡Da clic! instala tus paneles" />
           </button>
         </div>
         <Headroom disableInlineStyles>
@@ -239,7 +239,7 @@ const Header = () => {
                 <ul>
                   {menu.map(({ text, url }, index) => (
                     <li key={`menu-item-${index}`}>
-                      <button onClick={() => scrollTo(url)}>{text}</button>
+                      <AnchorLink to={`/${url}`} title={text} />
                     </li>
                   ))}
                 </ul>
@@ -324,10 +324,9 @@ const Header = () => {
               <button
                 onClick={() => {
                   setActive(false)
-                  scrollTo(url)
                 }}
               >
-                {text}
+                <AnchorLink to={`/${url}`} title={text} />
               </button>
             </li>
           ))}
