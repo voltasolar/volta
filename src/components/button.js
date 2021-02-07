@@ -2,7 +2,7 @@ import React from "react"
 import { css } from "@emotion/core"
 import { colors } from "./colors"
 
-const Button = ({ children, onClick, type, disabled, ...props }) => {
+const Button = ({ children, onClick, type, disabled }) => {
   return (
     <>
       <button
@@ -25,7 +25,6 @@ const Button = ({ children, onClick, type, disabled, ...props }) => {
         `}
         onClick={onClick}
         disabled={disabled}
-        {...props}
       >
         {children}
       </button>
