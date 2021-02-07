@@ -10,6 +10,7 @@ import ImageGrid from "../components/imageGrid"
 import CollapseList from "../components/collapseList"
 import ImageSlider from "../components/imageSlider"
 import ContactForm from "../components/contactForm"
+import QuoteGenerator from "../components/quoteGenerator"
 import HighlightBanner from "../components/highlightBanner"
 
 const HomePage = () => {
@@ -74,7 +75,11 @@ const HomePage = () => {
             )
           case "formulario_de_contacto":
             return (
-              <ContactForm
+              // <ContactForm
+              //   key={`${slice.type}-${index}`}
+              //   primary={slice.primary}
+              // />
+              <QuoteGenerator
                 key={`${slice.type}-${index}`}
                 primary={slice.primary}
               />
