@@ -60,7 +60,7 @@ const QuoteGenerator = () => {
           flex-wrap: wrap;
           overflow: hidden;
           .sr-only {
-            display: none;
+            display: none !important;
           }
           .form-wrapper {
             background-color: #f6f6f6;
