@@ -26,7 +26,6 @@ const QuoteGenerator = () => {
       }
     }
   `)
-  console.log(file)
 
   useEffect(() => {
     if (selectedForm === 1) {
