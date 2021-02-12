@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { css } from "@emotion/core"
 import { window } from "browser-monads"
 import Modal from "react-modal"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import { colors } from "./colors"
 import Button from "./button"
@@ -14,6 +15,7 @@ import Recibo from "../images/recibo-icon.inline.svg"
 const QuoteGenerator = () => {
   const [selectedForm, setSelectedForm] = useState(1)
   const [isOpen, setIsOpen] = useState(false)
+  const section = useRef(null)
 
   const { file } = useStaticQuery(graphql`
     {
@@ -55,6 +57,7 @@ const QuoteGenerator = () => {
     <>
       <div
         id="cotiza"
+        ref={section}
         css={css`
           display: flex;
           flex-wrap: wrap;
@@ -208,36 +211,42 @@ const QuoteGenerator = () => {
           <h2>Selecciona una opción para cotizar:</h2>
           <div className="button-group">
             <div>
-              <Button
-                onClick={() => {
-                  setSelectedForm(1)
-                }}
-                className={selectedForm === 1 ? "active" : ""}
-              >
-                <Recibo />
-              </Button>
+              <AnchorLink to="/#form-container">
+                <Button
+                  onClick={() => {
+                    setSelectedForm(1)
+                  }}
+                  className={selectedForm === 1 ? "active" : ""}
+                >
+                  <Recibo />
+                </Button>
+              </AnchorLink>
               <p>Lectura de recibo con número de servicio</p>
             </div>
             <div>
-              <Button
-                onClick={() => {
-                  setSelectedForm(2)
-                }}
-                className={selectedForm === 2 ? "active" : ""}
-              >
-                <Money />
-              </Button>
+              <AnchorLink to="/#form-container">
+                <Button
+                  onClick={() => {
+                    setSelectedForm(2)
+                  }}
+                  className={selectedForm === 2 ? "active" : ""}
+                >
+                  <Money />
+                </Button>
+              </AnchorLink>
               <p>Precio de tu recibo</p>
             </div>
             <div>
-              <Button
-                onClick={() => {
-                  setSelectedForm(3)
-                }}
-                className={selectedForm === 3 ? "active" : ""}
-              >
-                <Energy />
-              </Button>
+              <AnchorLink to="/#form-container">
+                <Button
+                  onClick={() => {
+                    setSelectedForm(3)
+                  }}
+                  className={selectedForm === 3 ? "active" : ""}
+                >
+                  <Energy />
+                </Button>
+              </AnchorLink>
               <p>Consumo de energía</p>
             </div>
           </div>
@@ -251,7 +260,7 @@ const QuoteGenerator = () => {
             ¿Cómo obtener mis datos?
           </button>
         </div>
-        <div className="form-text" data-sal="slide-left">
+        <div className="form-text" data-sal="slide-left" id="form-container">
           {selectedForm === 1 && (
             <form id="serviceNumberRpuForm">
               <label htmlFor="service_number_rpu" className="sr-only">
@@ -495,6 +504,7 @@ const QuoteGenerator = () => {
           setIsOpen(false)
         }}
         closeTimeoutMS={1000}
+        appElement={section.current}
       >
         <div
           style={{
