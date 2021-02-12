@@ -236,7 +236,7 @@ const Header = () => {
             </a>
           </div>
           <button>
-            <AnchorLink to="/#contacto" title="¡Da clic! instala tus paneles" />
+            <AnchorLink to="/#cotiza" title="Cotiza en línea" />
           </button>
         </div>
         <Headroom disableInlineStyles>

@@ -122,7 +122,7 @@ const HeroSlider = ({ slides }) => {
                       })}
                     </h2>
                     <Button>
-                      <AnchorLink to="/#contacto" title="Instala tus paneles" />
+                      <AnchorLink to="/#cotiza" title="Cotiza en línea" />
                     </Button>
                   </div>
                 </div>
