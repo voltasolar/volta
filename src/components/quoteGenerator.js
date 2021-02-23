@@ -120,11 +120,29 @@ const QuoteGenerator = () => {
               & > div {
                 padding: 0 10px;
                 flex: 1;
-                &:first-of-type {
+                svg {
+                  width: 40px;
+                }
+                &:nth-of-type(2) {
                   svg {
                     width: 30px;
                   }
                 }
+                &:nth-of-type(3) {
+                  svg {
+                    width: 50px;
+                  }
+                }
+                /* &:first-of-type {
+                  svg {
+                    width: 30px;
+                  }
+                }
+                &:nth-of-type(2) {
+                  svg {
+                    width: 25px;
+                  }
+                } */
                 p {
                   font-size: 0.9rem;
                 }
@@ -476,6 +494,7 @@ const QuoteGenerator = () => {
               <div id="serviceNumberConsumptionFormErrors"></div>
             </form>
           )}
+          <p>*No olvides revisar tu carpeta de SPAM</p>
         </div>
       </div>
       <Modal
